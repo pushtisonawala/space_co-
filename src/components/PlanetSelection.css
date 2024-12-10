@@ -1,0 +1,52 @@
+.planet-selection-box {
+    padding: 30px;
+    background-color: #1a1a2e;
+    border-radius: 12px;
+    margin: 30px auto; /* Centers the box horizontally */
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Planet Selection Layout */
+.planet-selection {
+    display: flex;
+    justify-content: space-around;  /* Space planets evenly */
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Planet Item Styling */
+.planet-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.planet-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Selected Planet Styling */
+.selected {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.planet-item p {
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #00bcd4;
+}

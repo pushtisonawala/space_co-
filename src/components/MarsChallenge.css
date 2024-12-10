@@ -1,0 +1,45 @@
+/* MarsChallenge.css */
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #d32f2f;
+    border-radius: 5px;
+    width: 80%;
+  }
+  
+  button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+  }
+  
+  button:hover {
+    background-color: #c62828;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+  }
+  

@@ -1,0 +1,147 @@
+/* Start.css */
+
+/* General Styles */
+.start-page {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+  }
+  
+  .navbar .logo {
+    font-size: 2rem;
+    color: #ff9800;
+    font-weight: bold;
+    letter-spacing: 3px;
+    transition: transform 0.2s ease;
+  }
+  
+  .navbar .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .navbar .navbar-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .navbar .navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .navbar-links a:hover {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ff9800;
+  }
+  
+  .navbar .menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Responsive Navbar */
+  @media screen and (max-width: 768px) {
+    .navbar .navbar-links {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      background-color: #212121;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .navbar.active .navbar-links {
+      display: flex;
+    }
+  
+    .navbar .menu-toggle {
+      display: block;
+    }
+  }
+  
+  /* Content Section Adjustment (Fix Navbar Overlap) */
+  .content-container {
+    padding-top: 120px; /* Add space to prevent overlap */
+    padding: 20px;
+  }
+  
+  /* Planet Selection Section - Centered and Aligned */
+  .planet-selection-section {
+    display: flex;
+    justify-content: center;  /* Centering planets horizontally */
+    align-items: center; /* Align planets vertically */
+    flex-wrap: wrap; /* Ensure planets wrap on smaller screens */
+    gap: 30px; /* Space between planets */
+    padding: 80px 50px 50px;
+  }
+  
+  /* Planet Style with 3D Effect */
+  .planet {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff9800, #ff5722);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease-in-out;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .planet:hover {
+    transform: scale(1.2) rotateY(20deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .planet:active {
+    transform: scale(1.1) rotateY(0deg);
+  }
+  
+  .planet .planet-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .planet:hover .planet-name {
+    opacity: 1;
+  }
+  

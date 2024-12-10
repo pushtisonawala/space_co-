@@ -1,0 +1,39 @@
+.jupiter-challenge {
+    background: #1e3a56;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .jupiter-challenge h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .jupiter-challenge ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .jupiter-challenge li {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+  
+  .jupiter-challenge button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .jupiter-challenge button:hover {
+    background-color: #e68a00;
+  }
+  

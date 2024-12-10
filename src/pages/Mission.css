@@ -1,0 +1,29 @@
+.mission-page {
+  padding: 20px;
+}
+
+.quiz-section {
+  margin-top: 20px;
+}
+
+.question-box {
+  margin-bottom: 20px;
+}
+
+.options button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.quiz-result {
+  margin-top: 20px;
+}
+
+.quiz-result button {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

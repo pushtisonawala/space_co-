@@ -1,0 +1,20 @@
+/* Footer Section Styling */
+.footer {
+  background: url('./footerimg.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .social-media-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media-links a:hover {
+    color: #00bfff;
+  }
+  
