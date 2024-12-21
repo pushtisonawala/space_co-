@@ -38,7 +38,15 @@ const App = () => {
     <div>
       <Routes>
         {/* Home and Start */}
-        <Route path="/" element={<HeroSection />} />
+        <Route 
+          path="/" 
+          element={
+            <>
+              <Navbar />
+              <HeroSection />
+            </>
+          } 
+        />
         <Route path="/start" element={<Start />} />
 
         {/* Pages with Navbar and Footer */}
@@ -89,7 +97,7 @@ const App = () => {
       </Routes>
 
       {/* Footer is conditionally rendered for all routes except '/transition' */}
-      {location.pathname !== '/transition' && <Footer />}
+      {location.pathname !== '/transition' &&location.pathname=='/mission'&&location.pathname=='/start' && <Footer />}
     </div>
   );
 };

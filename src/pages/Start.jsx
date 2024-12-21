@@ -20,7 +20,7 @@ const Start = () => {
   };
 
   const startMission = () => {
-    if (planet && Object.keys(resources).length > 0) {
+    if (planet && Object.keys(resources).length) {
       navigate('/transition', { state: { planet, resources } });
     } else {
       alert('Please select a planet and allocate resources first!');
@@ -30,7 +30,7 @@ const Start = () => {
   return (
     <div className="start-page">
       <div className="navbar">
-        <div className="logo">Mission App</div>
+        <div className="logo">Space-Col</div>
         <ul className="navbar-links">
           <li><a href="#mission-overview">Mission Overview</a></li>
           <li><a href="#resource-allocation">Resource Allocation</a></li>
@@ -50,10 +50,6 @@ const Start = () => {
         <section id="resource-allocation">
           <ResourceAllocation onResourceAllocate={handleResourceAllocation} />
         </section>
-
-        <button className="start-button" onClick={startMission}>
-          Start Mission
-        </button>
       </div>
     </div>
   );

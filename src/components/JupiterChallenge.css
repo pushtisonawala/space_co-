@@ -1,39 +1,129 @@
-.jupiter-challenge {
-    background: #1e3a56;
-    color: white;
-    padding: 20px;
+
+
+.word-search-game {
+    max-width: 600px;
     margin: 20px auto;
-    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the game area */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
-  }
-  
-  .jupiter-challenge h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .jupiter-challenge ul {
-    list-style: none;
+    color: #333; /* Darker text for the title */
+}
+
+.word-list {
+    margin-bottom: 20px;
+}
+
+.word-list h2 {
+    font-size: 1.5em;
+    color: #555; /* Slightly lighter color for the subtitle */
+}
+
+.word-list ul {
+    list-style-type: none; /* Remove default list styling */
     padding: 0;
-  }
-  
-  .jupiter-challenge li {
-    margin: 5px 0;
-    font-size: 18px;
-  }
-  
-  .jupiter-challenge button {
-    background-color: #ff9800;
-    color: white;
-    border: none;
+}
+
+.word-list li {
+    padding: 5px;
+    font-size: 1.2em;
+    color: #333; /* Dark text for words */
+}
+
+.word-list li.found {
+    text-decoration: line-through; /* Strike-through for found words */
+    color: #28a745; /* Green color for found words */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns for the grid */
+    gap: 5px; /* Space between grid cells */
+}
+
+.grid-row {
+    display: contents; /* Use contents to avoid extra divs */
+}
+
+.grid-cell {
+    width: 50px; /* Fixed width for cells */
+    height: 50px; /* Fixed height for cells */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; /* Larger font size for letters */
+    background-color: #e9ecef; /* Light gray background for cells */
+    border: 1px solid #ccc; /* Light border for cells */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.grid-cell:hover {
+    background-color: #d1e7dd; /* Light green on hover */
+}
+
+.grid-cell.selected {
+    background-color: #ffc107; /* Yellow for selected cells */
+    color: #fff; /* White text for selected cells */
+}
+
+.game-over {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8d7da; /* Light red background for game over */
+    border: 1px solid #f5c6cb; /* Red border */
+    border-radius: 8px;
+}
+
+.game-over h2 {
+    color: #721c24; /* Dark red text for game over message */
+}
+
+button {
     padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
+    font-size: 1em;
+    color: #fff; /* White text for buttons */
+    background-color: #007bff; /* Blue background for buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.alien-attack {
+    background-color: #ffcc00; /* Yellow background for alert */
+    color: #333; /* Dark text */
+    padding: 10px;
+    border: 1px solid #ff9900; /* Darker yellow border */
     border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .jupiter-challenge button:hover {
-    background-color: #e68a00;
-  }
-  
+    margin-top: 20px;
+    text-align: center;
+}
+
+.resources {
+    margin-bottom: 20px;
+}
+
+.resources h2 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources li {
+    font-size: 1.2em;
+    color: #333;
+}

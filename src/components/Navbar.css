@@ -75,6 +75,7 @@
         padding: 20px;
         position: absolute;
         top: 70px;
+        margin-inline-start: 10%;
         right: 0;
         width: 200px;
     }
@@ -100,4 +101,7 @@
     font-size: 2rem;
     cursor: pointer;
     color: white;
+}
+.navbar ul li:last-child {
+    margin-right: 30px; /* Add margin to the right for the last list item */
 }

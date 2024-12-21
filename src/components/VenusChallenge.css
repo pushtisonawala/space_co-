@@ -1,45 +1,144 @@
-/* VenusChallenge.css */
-
-body {
-    background-color: #fff7e6;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  h2 {
-    color: #ff9800;
+/* Space Game Container */
+.venus-challenge {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle, #000 60%, #1a1d23);
+    color: #fff;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
   }
   
-  input {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ff9800;
-    border-radius: 5px;
-    width: 80%;
+  /* Add a starry background */
+  .venus-challenge::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://source.unsplash.com/1920x1080/?space') no-repeat center center;
+    background-size: cover;
+    filter: blur(5px) brightness(0.3);
+    z-index: -1;
   }
   
-  button {
-    background-color: #ff9800;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+  /* Headings */
+  .venus-challenge h1 {
+    font-size: 2.5em;
+    color: #00e5ff;
+    text-shadow: 0 0 15px #00e5ff, 0 0 30px #00aaff;
+    margin-bottom: 10px;
+  }
+  
+  /* Game Statistics */
+  .game-stats {
+    background: linear-gradient(145deg, #1e2630, #12171e);
+    border: 1px solid #3a3f48;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .game-stats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .game-stats li {
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+  
+/* Adjusted Game Area */
+.game-area {
+    position: relative;
+    width: 80%; /* Shrink the width for a tighter layout */
+    max-width: 600px; /* Cap the size on larger screens */
+    height: 400px; /* Smaller height for balance */
+    margin: 20px auto; /* Center the box */
+    background: linear-gradient(145deg, #2a3b52, #1e293d);
+    border: 2px solid #3a3f48;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden; /* Ensure no elements overflow the box */
+  }
+  
+ /* Alien Styling with Pointer Cursor */
+.alien {
+    position: absolute;
+    font-size: 2em; /* Adjusted for the new game area */
+    color: #ff69b4;
+    cursor: pointer; /* Makes the cursor a hand on hover */
+    transition: transform 0.2s ease-in-out; /* Smooth scaling */
+  }
+  
+  .alien:hover {
+    transform: scale(1.2); /* Slightly larger when hovered */
+    color: #f54291; /* Add a subtle color change for feedback */
+  }
+  
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Game Over */
+  .game-over {
+    background: linear-gradient(145deg, #12171e, #1e2630);
+    border: 1px solid #3a3f48;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .game-over h2 {
+    font-size: 2em;
+    color: #ff6b6b;
+  }
+  
+  .game-over button {
+    background: linear-gradient(145deg, #00c853, #00e676);
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
     cursor: pointer;
-    display: block;
-    margin: 10px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
-  button:hover {
-    background-color: #f57c00;
+  .game-over button:hover {
+    background: linear-gradient(145deg, #00e676, #00c853);
+    transform: scale(1.1);
+    transition: transform 0.3s, background 0.3s;
   }
   
-  p {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
+  /* Custom Scrollbar */
+  .venus-challenge::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .venus-challenge::-webkit-scrollbar-thumb {
+    background: #00e5ff;
+    border-radius: 5px;
+  }
+  
+  .venus-challenge::-webkit-scrollbar-thumb:hover {
+    background: #00aaff;
   }
   

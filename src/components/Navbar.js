@@ -21,18 +21,7 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
       </div>
 
       <ul className={menuOpen ? 'open' : ''}>
-        <li>
-          <Link to="/start">Start new Mission</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/leaderboard">Leaderboard</Link>
-        </li>
-        <li>
-          <Link to="/help">Help</Link>
-        </li>
+       
         {isLoggedIn ? (
           <li>
             <button className="logout-button" onClick={onLogout}>Logout</button>

@@ -1,29 +1,140 @@
-.mission-page {
-  padding: 20px;
+/* Mission Page Styles */
+.mission-container {
+  background: linear-gradient(135deg, #1a1a2e, #16213e); /* Deep dark gradient background */
+  color: #e5e5e5; /* Light gray text */
+  font-family: 'Roboto', sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center; /* Center text */
 }
 
-.quiz-section {
-  margin-top: 20px;
-}
-
-.question-box {
+.header h1 {
+  font-size: 3rem;
   margin-bottom: 20px;
+  color: #f1c40f; /* Yellow-gold text for main title */
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.options button {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
+.resources h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e5e5e5;
 }
 
-.quiz-result {
-  margin-top: 20px;
+.resources ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
 }
 
-.quiz-result button {
-  padding: 10px;
-  background-color: green;
-  color: white;
+.resources li {
+  margin: 10px 0;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.start-btn {
+  background-color: #f39c12; /* Bright orange button for action */
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 20px 40px;
   border: none;
+  border-radius: 50px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.start-btn:hover {
+  background-color: #e67e22;
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.start-btn:active {
+  transform: scale(0.98); /* Slightly shrink button on click */
+}
+
+.rocket-container {
+  position: absolute; /* Ensure the rocket moves over the whole screen */
+  animation: launchAnimation 5s forwards ease-in-out;
+}
+
+.rocket {
+  width: 60px;
+  height: 120px;
+  background: linear-gradient(to bottom, #f44336, #e91e63);
+  border-radius: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow effect */
+}
+
+.rocket::after {
+  content: '';
+  width: 35px;
+  height: 35px;
+  background-color: #ff9800;
+  border-radius: 50%;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rocket::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: flameAnimation 0.3s infinite ease-in-out;
+}
+
+@keyframes flameAnimation {
+  0% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Rocket Diagonal Movement */
+@keyframes launchAnimation {
+  0% {
+    bottom: 0;
+    left: 0; /* Start from the bottom left */
+  }
+  50% {
+    bottom: 50%; /* Move to the center */
+    left: 50%; /* Move to the center */
+  }
+  100% {
+    bottom: 100%; /* End at the top-right */
+    left: 100%;
+    opacity: 0; /* Fade out */
+  }
 }

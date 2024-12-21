@@ -18,17 +18,26 @@ const MissionOverview = ({ planet, resources }) => {
   return (
     <div className="mission-overview">
       <h2>Mission Overview</h2>
-      {planet ? <p>Planet: {planet}</p> : <p>Please select a planet.</p>}
+      {planet ? <p className="planet-info">Planet: {planet}</p> : <p>Please select a planet.</p>}
       {resources ? (
-        <ul>
-          <li>Food: {resources.food}</li>
-          <li>Water: {resources.water}</li>
-          <li>Fuel: {resources.fuel}</li>
+        <ul className="resources-list">
+          <li className="resource-item">
+            <span className="resource-label">Food:</span>
+            <span className="resource-value">{resources.food}</span>
+          </li>
+          <li className="resource-item">
+            <span className="resource-label">Water:</span>
+            <span className="resource-value">{resources.water}</span>
+          </li>
+          <li className="resource-item">
+            <span className="resource-label">Fuel:</span>
+            <span className="resource-value">{resources.fuel}</span>
+          </li>
         </ul>
       ) : (
         <p>Please allocate resources.</p>
       )}
-      <button onClick={handleStartMission}>Start Mission</button>
+      <button className="start-button" onClick={handleStartMission}>Start Mission</button>
     </div>
   );
 };

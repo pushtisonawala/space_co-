@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './HeroSection.css';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
-
-// Custom hook to animate stars
 const FloatingStars = ({ starsRef }) => {
   useFrame(() => {
     starsRef.current.rotation.x += 0.001;
@@ -14,18 +14,29 @@ const FloatingStars = ({ starsRef }) => {
   return null;
 };
 
-const HeroSection = () => {
+const HeroSection = ({ isLoggedIn }) => {
   const starsRef = useRef();
+  const navigate = useNavigate();
+
+  const handleStartJourney = () => {
+    if (isLoggedIn) {
+      navigate('/start');
+    } else {
+      toast.error('Please log in to start a new mission!');
+    }
+  };
 
   return (
     <header className="hero-section">
+      {/* Toast Container */}
+      <ToastContainer />
+
       {/* 3D Canvas */}
       <div className="hero-container">
         <Canvas
           camera={{ position: [0, 0, 3], fov: 75 }}
           onCreated={(state) => state.gl.setClearColor('black')}
         >
-          {/* Add floating stars */}
           <group ref={starsRef}>
             {[...Array(100)].map((_, index) => (
               <mesh
@@ -41,11 +52,7 @@ const HeroSection = () => {
               </mesh>
             ))}
           </group>
-
-          {/* Add animation to the stars */}
           <FloatingStars starsRef={starsRef} />
-
-          {/* Orbit controls for interactivity */}
           <OrbitControls enableZoom={false} enableRotate={true} enablePan={false} />
         </Canvas>
       </div>
@@ -54,8 +61,9 @@ const HeroSection = () => {
       <div className="hero-content">
         <h1>Explore the Cosmos</h1>
         <p>Unlock the mysteries of the universe, one star at a time.</p>
-        <Link to="/start" className="cta-button">Begin Your Journey</Link>
-
+        <button onClick={handleStartJourney} className="cta-button">
+          Begin Your Journey
+        </button>
       </div>
     </header>
   );
